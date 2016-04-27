@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Markdown Viewer</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<style>
+	body { margin-top: 70px; }
+	.markdown-input { font-family: 'Consolas'; min-height: 400px; }
+	.markdown-panel-body { min-height: 400px; }
+	</style>
+</head>
+<body>
+	<div class="container-fluid">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Markdown Viewer</a>
+				</div>
+			</div><!--/.container-fluid -->
+		</nav>
+		<div id="markdown-panel"></div>
+	</div>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="build/bundle.js"></script>
+</body>
+</html>
