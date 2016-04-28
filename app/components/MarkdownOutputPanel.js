@@ -1,16 +1,11 @@
 'use strict';
-
 const React = require('react');
 
-var MarkdownOutputPanel = React.createClass({
+module.exports = React.createClass({
 
   	render: function() {
 	    return (
-	      <div className="panel panel-default">
-	      	<div className="markdown-panel-body panel-body" dangerouslySetInnerHTML={{__html: this.props.mdoutput}}></div>
-	      </div>
+	    	<div className="markdown-panel-body" dangerouslySetInnerHTML={{__html: this.props.value}}></div>
 	    );
   	}
 });
-
-module.exports = MarkdownOutputPanel;

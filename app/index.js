@@ -1,7 +1,9 @@
 'use strict';
 
+global.$ = global.jQuery = require('jquery');
+const Bootstrap = require('bootstrap');
 const React = require('react');
 const ReactDOM = require('react-dom');
-const MarkdownPanel = require('./components/MarkdownPanel');
+const App = require('./components/App');
 
-ReactDOM.render(<MarkdownPanel />, document.getElementById('markdown-panel'));
+ReactDOM.render(<App />, document.getElementById('app'));

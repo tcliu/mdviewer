@@ -1,32 +1,25 @@
 'use strict';
-
 const React = require('react');
 
-var MarkdownInputBox = React.createClass({
+module.exports = React.createClass({
 
 	getInitialState: function() {
-		var v = this.props.value;
-		if (!v && typeof localStorage !== 'undefined') {
-			v = localStorage.getItem('markdown');
-		}
-		return {value: v || ''};
+		return {value: this.props.value || ''};
 	},
 
 	onKeyDown: function(e) {
 		if (e.keyCode == 9) {
-			this.input.value += '\t';
+			this.state.value += '\t';
+			this.forceUpdate();
 			e.preventDefault();
 		}
-
 	},
 
-	updateMarkdown: function(e) {
-		this.setState({value: e.target.value});
-		if (typeof localStorage !== 'undefined') {
-			localStorage.setItem('markdown', this.state.value);
-		}
+	onChange: function(e) {
+		var v = e.target.value;
+		this.setState({value: v});
 		if (this.props.onChange) {
-			this.props.onChange(this.state.value);
+			this.props.onChange(v);
 		}
 	},
 
@@ -34,12 +27,10 @@ var MarkdownInputBox = React.createClass({
 		return (
 			<form>
 			  <div className="form-group">
-			    <textarea className="markdown-input form-control" autoFocus={true} placeholder="Markdown" value={this.state.value} onKeyDown={this.onKeyDown} 
-			    	onChange={this.updateMarkdown} ref={(ref) => this.input = ref}></textarea>
+			    <textarea className="markdown-input form-control" autoFocus={true} placeholder="Markdown something ..." value={this.state.value} 
+			    	onKeyDown={this.onKeyDown} onChange={this.onChange}></textarea>
 			  </div>
 			</form>
 		);
 	}
 });
-
-module.exports = MarkdownInputBox;

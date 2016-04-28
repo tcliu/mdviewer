@@ -2,4 +2,8 @@
 build
 node_modules
 bower_components
+public/bower_components
+public/**/*.html
+public/**/*.js
+public/**/*.css
 *.log
