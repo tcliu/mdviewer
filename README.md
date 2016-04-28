@@ -6,3 +6,4 @@ npm install
 bower install
 npm run serve
 ```
+Alternatively, it can be run directly via this [link](https://run.plnkr.co/Dhb6yAaGVcFMM1kc/).
